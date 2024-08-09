@@ -9,7 +9,7 @@ export default function Home() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-    const URL = 'https://65b472db41db5efd28668b79.mockapi.io/Crud';
+    const URL = 'https://66b5c806b5ae2d11eb64a74d.mockapi.io/react-crud-operation';
 
     //------------------------------Get Data----------------------------------
 
@@ -23,7 +23,7 @@ export default function Home() {
     const postData = async (e) => {
         e.preventDefault();
         let datas = { name, email, password };
-        let response = await axios.post('https://65b472db41db5efd28668b79.mockapi.io/Crud', datas);
+        let response = await axios.post('https://66b5c806b5ae2d11eb64a74d.mockapi.io/react-crud-operation', datas);
         getData();
         setName('');
         setEmail('');
@@ -34,7 +34,7 @@ export default function Home() {
     //------------------------------Delete Data----------------------------------
 
     const deleteData = async (id) => {
-        let response = await axios.delete(`https://65b472db41db5efd28668b79.mockapi.io/Crud/${id}`);
+        let response = await axios.delete(`https://66b5c806b5ae2d11eb64a74d.mockapi.io/react-crud-operation/${id}`);
         getData();
         return response;
     };
@@ -58,8 +58,9 @@ export default function Home() {
             <h1>Home Page:</h1>
             <hr />
             <center>
+
                 {/*------------------User Information---------------------------------- */}
-                {/* <h2>Post Data:</h2> */}
+
                 <form onSubmit={postData}>
                     <pre>
                         Name:     :   <input type="text" value={name} onChange={(e) => setName(e.target.value)} /><br /><br />
@@ -70,8 +71,9 @@ export default function Home() {
                         <br /><br /><br />
                     </pre>
                 </form>
-                {/* <h2>Fetch Data:</h2> */}
+
                 {/*------------------fetch data by map---------------------------------- */}
+
                 <table border={1}>
                     <tbody>
                         <tr>

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-// import { NavLink } from 'react-router-dom';
 
 
 export default function EditForm() {
@@ -21,7 +20,7 @@ export default function EditForm() {
     const handleEdit = async (e) => {
         e.preventDefault();
         let data = { name, email, password };
-        let response = await axios.put(`https://65b472db41db5efd28668b79.mockapi.io/Crud/${id}`, data)
+        let response = await axios.put(`https://66b5c806b5ae2d11eb64a74d.mockapi.io/react-crud-operation/${id}`, data)
         navigate('/');
         return response;
     }
